@@ -1,0 +1,36 @@
+<div class="wrapper">
+    <div class="header">
+        <h1>Roles</h1>
+        <button mat-button class="add-btn" routerLink="add">add role</button>
+    </div>
+        <table mat-table [dataSource]="roles">
+
+            <ng-container matColumnDef="code" >
+            <th mat-header-cell *matHeaderCellDef class="code"> code </th>
+            <td mat-cell *matCellDef="let element" class="code"> {{element.code}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="designation" >
+            <th mat-header-cell *matHeaderCellDef class="designation"> designation </th>
+            <td mat-cell *matCellDef="let element" class="designation"> {{element.designation}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="abreviation" >
+            <th mat-header-cell *matHeaderCellDef class="abreviation"> abreviation </th>
+            <td mat-cell *matCellDef="let element" class="abreviation"> {{element.abreviation}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="action" >
+                <th mat-header-cell *matHeaderCellDef class="action"></th>   
+                <td mat-cell *matCellDef="let element" class="action"> 
+                  <!-- <button mat-icon-button  aria-label="Example icon-button with a menu">
+                    <mat-icon>edit</mat-icon>
+                  </button> -->
+                  <app-delete-role [id]="element.id"></app-delete-role>
+                </td>
+              </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+</div>

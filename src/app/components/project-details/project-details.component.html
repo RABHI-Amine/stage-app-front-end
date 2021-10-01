@@ -1,0 +1,38 @@
+<div class="wrapper">
+
+  <section class="header">
+    <div class="project-details">
+      <h1 class="project-name">{{projet.nom}}</h1>
+    </div>
+    <div class="actions">
+      <app-delete-project [id]="projet.id"></app-delete-project>
+    </div>
+  </section>
+
+  <section class="details">
+    <div class="project-deadline">
+      <div class="deadline-card">
+        <h1>{{ this.NbreDeJoursLivraison}}</h1>
+        <div class="deadline-card-title">Nbre de jours avant livraison</div>
+      </div>
+      <div class="deadline-card">
+        <h1>{{ projet.dateDebut | date:'dd MMM yy'}}</h1>
+        <div class="deadline-card-title">Date du debut du projet</div>
+      </div>
+      <div class="deadline-card">
+        <h1>{{ projet.dateLivraison | date:'dd MMM yy'}}</h1>
+        <div class="deadline-card-title">Date de livraison</div>
+      </div>
+      <div class="deadline-card">
+        <h1>{{ projet.nomClient }}</h1>
+        <div class="deadline-card-title">Client</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="team">
+    <app-project-team-members [id]="projet.id"></app-project-team-members>
+  </section>
+
+</div>

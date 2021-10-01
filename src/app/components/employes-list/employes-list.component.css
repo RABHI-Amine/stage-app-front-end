@@ -1,0 +1,39 @@
+table {
+  width: 100%;
+}
+
+
+
+
+.list-header{
+    width: 100%;
+    background-color: #F1F5F9;
+    padding: 16px 32px;
+}
+
+
+.list-header ul{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr 1fr;
+}
+
+.list-header li{
+   color : #64748B;
+   font-weight: 500;
+}
+
+mat-expansion-panel-header{
+    padding: 16px 32px;
+}
+
+mat-expansion-panel-header ul{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr 1fr;
+}
+
+mat-expansion-panel{
+    box-shadow: 0 40px 2px -2px rgba(0,0,0,1);
+    
+}

@@ -1,0 +1,21 @@
+<div class="wrapper">
+      <div class="form">
+        <div class="title">Ajouter un profile</div>
+      <form [formGroup]="roleForm" (ngSubmit)="onSubmit()">
+                <mat-form-field appearance="fill">
+                  <mat-label>Designation</mat-label>
+                  <input matInput id="designation" formControlName="designation">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                  <mat-label>Abreviation</mat-label>
+                  <input matInput id="abreviation" formControlName="abreviation">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                  <mat-label>Code</mat-label>
+                  <input matInput id="code" formControlName="code">
+                </mat-form-field>
+                <button mat-button type="submit" [disabled]="!roleForm.valid" class="submit-btn">Submit</button>
+              </form>
+            </div>
+
+</div>

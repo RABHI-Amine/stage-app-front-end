@@ -1,0 +1,58 @@
+<div class="wrapper">
+<div class="form">
+        <h1 class="title">Creation d'un nouveau projet</h1>
+        <form [formGroup]="projetForm" (ngSubmit)="onSubmit()" #formDirective="ngForm">
+            <mat-form-field  appearance="fill">
+                <mat-label>Nom du projet</mat-label>
+                <input
+                matInput 
+                    id="nom"
+                    formControlName="nom"
+                >
+            </mat-form-field>
+            <mat-form-field  appearance="fill">
+                <mat-label>Description du projet</mat-label>
+                <textarea
+                matInput 
+                    id="description"
+                    formControlName="description"
+                ></textarea>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>date de debut du projet</mat-label>
+                <input 
+                    matInput 
+                    [matDatepicker]="picker"
+                    id="dateDebut"
+                    formControlName="dateDebut"    
+                >
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>              
+
+            <mat-form-field appearance="fill">
+                <mat-label>date de livraison du projet</mat-label>
+                <input
+                 matInput 
+                 [matDatepicker]="picker2"
+                 id="dateLivraison"
+                 formControlName="dateLivraison"    
+                >
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+              </mat-form-field>              
+
+              <mat-form-field  appearance="fill">
+                <mat-label>Nom du Client</mat-label>
+                <input
+                matInput 
+                    id="nomClient"
+                    formControlName="nomClient"
+                >
+            </mat-form-field>
+
+            <button class="submit-btn" mat-button type="submit" [disabled]="!projetForm.valid"class="submit-btn">Submit</button>
+    
+    </form>
+</div>
+</div>

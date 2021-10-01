@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <div class="form">
+    <!-- <h1 class="logo">Logo</h1> -->
+    <h1 class="title">Login</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" #formDirective="ngForm">
+      <mat-form-field appearance="fill">
+        <mat-label>email</mat-label>
+        <input matInput id="username" formControlName="username">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>password</mat-label>
+        <input matInput id="password" formControlName="password" type="password">
+      </mat-form-field>
+      <button class="submit-btn" mat-button type="submit" [disabled]="!loginForm.valid" class="submit-btn">Submit</button>
+
+    </form>
+  </div>
+
+
+</div>

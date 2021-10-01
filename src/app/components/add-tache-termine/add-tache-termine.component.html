@@ -1,0 +1,14 @@
+<div class="wrapper">
+    <form [formGroup]="tacheForm" (ngSubmit)="onSubmit()">
+        <h1>Ajouter une tache</h1>
+        <mat-form-field  appearance="fill">
+            <mat-label>task title</mat-label>
+            <input
+            matInput 
+                id="name"
+                formControlName="name"
+            >
+        </mat-form-field>
+        <button mat-button type="submit" [disabled]="!tacheForm.valid"class="submit-btn">Submit</button>
+</form>
+</div>

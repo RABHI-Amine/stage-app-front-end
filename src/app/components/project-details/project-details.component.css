@@ -1,0 +1,80 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header header header"
+    "details details details details"
+    "team team team team";
+}
+  
+.details {
+  grid-area: details;
+}
+
+
+.header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent !important;
+}
+
+.project-deadline {
+  margin-top: 10px;
+  /* background-color: red; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 0 20px ;
+}
+
+.deadline-card {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.deadline-card h1 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.deadline-card-title {
+  font-size: 1rem;
+  color: #9197A5;
+}
+
+.team {
+  grid-area: team;
+  padding: 20px;
+}
+
+.project-name {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+
+
+
+@media screen and (max-width: 1200px) and (min-width : 600px){
+  .project-deadline {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .deadline-card {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px)  {
+  .project-deadline {
+    grid-template-columns: 1fr;
+  }
+
+  .deadline-card {
+    text-align: center;
+  }
+}

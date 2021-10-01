@@ -1,0 +1,14 @@
+<div class="project-card">
+  <span class="project-name">{{projet.nom}}</span>
+  <div class="project-description">{{projet.description}} Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+    Beatae, repellat. Hic, fugiat nisi? Repellendus quam iusto voluptatibus incidunt, maxime debitis, repellat quos
+    voluptate commodi dolor hic provident dicta minus modi numquam soluta illum pariatur aperiam laboriosam quaerat
+    atque. Consequatur distinctio autem natus veniam delectus aut explicabo accusamus ad reprehenderit porro.</div>
+  <mat-divider></mat-divider>
+  <div class="deadline">
+    Date limite: {{projet.dateLivraison | date : 'dd MMMM'}}
+  </div>
+  <div class="project-tasks-count">
+    {{projet.taches.length}} taches
+  </div>
+</div>

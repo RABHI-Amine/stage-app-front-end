@@ -1,0 +1,20 @@
+<div class="wrapper">
+    <div class="header">
+      <h1 >Projets</h1>
+     <div class="actions">
+      <button mat-button class="add-btn" routerLink="add"  matTooltip="ajouter un nouveau projet" matTooltipPosition="left">
+        <mat-icon>add</mat-icon>
+        Ajouter Projet
+      </button>
+     </div>
+    </div>
+
+    <div class="cards-container">
+      <app-project-card 
+        *ngFor="let projet of projets"
+        [projet]="projet"
+        [routerLink]="[projet.id]"  
+      ></app-project-card>
+    </div> 
+</div>
+

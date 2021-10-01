@@ -1,0 +1,17 @@
+<div class="wrapper">
+  <div class="header">
+    <h1>Mes projets</h1>
+  </div>
+
+  <h1 class="pas-de-ressources" *ngIf="affectations.length == 0">
+    Vous n'etes affecte a aucun projet
+  </h1>
+  <div class="cards-container">
+    <app-employe-project-card 
+      *ngFor="let affectation of affectations"
+       [affectation]="affectation"
+       [routerLink]="[affectation.projet.id]"  
+       >
+    </app-employe-project-card>
+  </div>
+</div>

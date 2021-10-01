@@ -1,0 +1,59 @@
+<mat-card-title class="header">
+  <h1>Dashbord du projet</h1>
+</mat-card-title>
+<mat-card-content class="taches-container">
+
+  <div class="tasks-list-container">
+    <div class="tasks-header">
+      <h2>taches a faire</h2>
+      <div>
+        <span class="tasks-number">{{tachesAFaire.length}}</span>
+        <button mat-button (click)="openDialog()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div cdkDropList #aFaire="cdkDropList" [cdkDropListData]="tachesAFaire" [cdkDropListConnectedTo]="[enCours,termine]"
+      class="taches taches-a-faire" (cdkDropListDropped)="drop($event)">
+      <div class="tache" *ngFor="let taf of tachesAFaire" cdkDrag> {{taf.name}}</div>
+    </div>
+  </div>
+
+  <div class="tasks-list-container">
+    <div class="tasks-header">
+      <h2>taches En cours</h2>
+      <div>
+        <span class="tasks-number">{{tachesEnCours.length}}</span>
+        <button mat-button (click)="openDialog2()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div cdkDropList #enCours="cdkDropList" [cdkDropListData]="tachesEnCours"
+      [cdkDropListConnectedTo]="[aFaire,termine]" class="taches" (cdkDropListDropped)="drop($event)">
+      <div class="tache" *ngFor="let t of tachesEnCours" cdkDrag>
+        <p>{{t.name}}</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="tasks-list-container">
+    <div class="tasks-header">
+      <h2>taches termines</h2>
+      <div>
+        <span class="tasks-number">{{tachesTermine.length}}</span>
+        <button mat-button (click)="openDialog3()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+      
+    </div>
+    <div cdkDropList #termine="cdkDropList" [cdkDropListData]="tachesTermine"
+      [cdkDropListConnectedTo]="[aFaire,enCours]" class="taches" (cdkDropListDropped)="drop($event)">
+      <div class="tache" *ngFor="let t of tachesTermine" cdkDrag>{{t.name}}</div>
+    </div>
+  </div>
+
+
+</mat-card-content>

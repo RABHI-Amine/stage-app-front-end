@@ -1,0 +1,37 @@
+<div class="wrapper">
+  <div class="header">
+      <h1 class="project-categorie">{{projet.nom}}</h1>
+
+  </div>
+  <div class="details">
+    <div class="project-deadline">
+      <div class="deadline-card">
+        <h1>{{ this.NbreDeJoursLivraison}}</h1>
+        <div class="deadline-card-title">Nbre de jours avant livraison</div>
+      </div>
+      <div class="deadline-card">
+        <h1>{{ projet.dateDebut | date:'dd MMM yy'}}</h1>
+        <div class="deadline-card-title">Date du debut du projet</div>
+      </div>
+      <div class="deadline-card">
+        <h1>{{ projet.dateLivraison | date:'dd MMM yy'}}</h1>
+        <div class="deadline-card-title">Date de livraison</div>
+      </div>
+      <div class="deadline-card">
+        <h1>{{ projet.nomClient }}</h1>
+        <div class="deadline-card-title">Client</div>
+      </div>
+
+    </div>
+  </div>
+  <div class="team">
+       <app-project-team-members 
+        [id]="projet.id"
+        [displayAddColaborator]="false" 
+       ></app-project-team-members>
+    </div>
+
+  <div class="tasks">
+    <app-project-tasks-board></app-project-tasks-board>
+  </div>
+</div>

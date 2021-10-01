@@ -1,0 +1,91 @@
+<div class="wrapper">
+  <div class="header">
+    <h1>Employes</h1>
+
+    <div class="actions">
+      <button mat-button class="add-btn" routerLink="add">
+        <mat-icon>add</mat-icon>
+        Ajouter
+      </button>
+    </div>
+  </div>
+
+  <div class="employes-list-container">
+    <div class="list-header">
+      <ul>
+        <li>id</li>
+        <li>nom</li>
+        <li>prenom</li>
+      </ul>
+    </div>
+
+    <mat-expansion-panel 
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+      *ngFor="let employe of employes"  
+    >
+      <mat-expansion-panel-header>
+        <ul>
+          <li>{{employe.id}}</li>
+          <li>{{employe.nom}}</li>
+          <li>{{employe.prenom}}</li>
+        </ul>
+      </mat-expansion-panel-header>
+      <app-employe-edit-form [id]="employe.id"></app-employe-edit-form>
+
+      </mat-expansion-panel>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <table mat-table [dataSource]="employes">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef class="id"> id </th>
+      <td mat-cell *matCellDef="let element" class="id"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nom">
+      <th mat-header-cell *matHeaderCellDef class="nom"> nom </th>
+      <td mat-cell *matCellDef="let element" class="nom"> {{element.nom}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="prenom">
+      <th mat-header-cell *matHeaderCellDef class="prenom"> prenom </th>
+      <td mat-cell *matCellDef="let element" class="prenom"> {{element.prenom}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef class="action"></th>
+      <td mat-cell *matCellDef="let element" class="action action-btns">
+        <button mat-icon-button  aria-label="Example icon-button with a menu">
+                    <mat-icon>edit</mat-icon>
+                  </button>
+        <app-delete-employe [id]="element.id"></app-delete-employe>
+
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table> -->
+</div>

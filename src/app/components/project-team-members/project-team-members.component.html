@@ -1,0 +1,30 @@
+<div class="team">
+  <div class="header">
+    <div class="div">
+      <h1>Team members</h1>
+      <h3>{{affectations.length}} collaborateurs</h3>
+    </div>
+
+    <div class="actions">
+      <button mat-button (click)="openDialog()" *ngIf="displayAddColaborator" class="add-btn">
+        <mat-icon>add</mat-icon>
+        <span class="add-collaborator-span">ajouter un collaborateur</span>
+      </button>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="team-members">
+    <div class="team-member" *ngFor="let a of affectations">
+      <div class="avatar">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVHYIVlznf2_jPywwdfQQNMgnYgD9tHlqs1A&usqp=CAU"
+          alt="">
+      </div>
+      <div class="content">
+        <div class="name">{{ a.employe.nom | uppercase }} {{ a.employe.prenom | titlecase }}</div>
+        <div class="role">{{ a.role.designation}}</div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

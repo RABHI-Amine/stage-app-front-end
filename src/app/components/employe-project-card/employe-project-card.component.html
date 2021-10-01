@@ -1,0 +1,11 @@
+<div class="project-card">
+  <span class="project-name">{{affectation.projet.nom}}</span>
+  <div class="project-description">{{affectation.role.designation}} </div>
+  <mat-divider></mat-divider>
+  <div class="deadline">
+    Date limite: {{affectation.projet.dateLivraison | date : 'dd MMMM'}}
+  </div>
+  <!-- <div class="project-tasks-count">
+      {{affectation.projet.taches.length}} taches
+    </div> -->
+</div>

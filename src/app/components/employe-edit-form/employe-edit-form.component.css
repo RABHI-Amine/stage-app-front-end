@@ -1,0 +1,47 @@
+.add-btn {
+  background-color: #4F46E5 !important;
+}
+
+form {  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-fuilds {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap : 20px;
+    padding: 16px;
+    width: 100%;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #E2E8F0;
+}
+
+.submit-btn {
+  background-color: #4F46E5;
+  color: #fff !important;
+}
+
+.update-message{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.update-message mat-icon{
+  color : #4ADE80;
+  margin-right: 10px;
+}
+
+::ng-deep .mat-expansion-panel-body {
+    padding: 0;
+}
+
+

@@ -1,0 +1,28 @@
+table {
+  width: 100%;
+}
+
+th {
+  background-color: #F1F5F9;
+}
+
+th {
+  color: #64748B;
+  font-weight: 500;
+}
+
+.id {
+  width: 20%;
+}
+
+.nom {
+  width: 35%;
+}
+
+.prenom {
+  width: 35%;
+}
+
+.action {
+  width: 10%;
+}

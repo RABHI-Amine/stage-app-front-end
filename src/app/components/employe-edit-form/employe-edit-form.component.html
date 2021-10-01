@@ -1,0 +1,34 @@
+<form [formGroup]="editEmployeForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-fuilds">
+
+    <mat-form-field>
+      <mat-label>Nom</mat-label>
+      <input matInput id="nom" formControlName="nom">
+    </mat-form-field>
+
+    <mat-form-field >
+      <mat-label>Prenom</mat-label>
+      <input matInput id="prenom" formControlName="prenom">
+    </mat-form-field>
+
+    <mat-form-field >
+      <mat-label>Num de telephone</mat-label>
+      <input matInput id="numeroTelephone" formControlName="numeroTelephone">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>email</mat-label>
+      <input matInput id="email" formControlName="email">
+    </mat-form-field>
+  </div>
+
+  <div class="action-buttons">
+    <app-delete-employe [id]="employe.id"></app-delete-employe>
+    <div class="update-message" *ngIf="updated">
+      <mat-icon>check</mat-icon>employe mis a jour
+    </div>
+    <button mat-button class="submit-btn" type="submit" [disabled]="!editEmployeForm.valid"
+      class="submit-btn">Update</button>
+  </div>
+</form>
